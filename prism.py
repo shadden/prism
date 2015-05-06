@@ -38,7 +38,7 @@ def anim_to_html(anim):
 
     if not hasattr(anim, '_encoded_video'):
         with NamedTemporaryFile(suffix='.mp4') as f:
-            anim.save(f.name, fps=30, extra_args=['-vcodec', 'libx264'])
+            anim.save(f.name, fps=30)
             video = open(f.name, "rb").read()
         anim._encoded_video = video.encode("base64")
 
